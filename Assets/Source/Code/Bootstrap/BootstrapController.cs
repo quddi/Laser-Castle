@@ -1,13 +1,20 @@
-using Sirenix.OdinInspector;
+using Code.Lifecycle;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Zenject;
 
-public class BootstrapController : MonoBehaviour
+public class BootstrapController : MonoBehaviour, IInitializable
 {
-    [SerializeField, TabGroup("Parameters")] private string _gameSceneName;
-    
-    private void Start()
+    private ILifecycleService _lifecycleService;
+
+    [Inject]
+    private void Construct(ILifecycleService lifecycleService)
     {
-        SceneManager.LoadScene(_gameSceneName);
+        _lifecycleService = lifecycleService;
+    }
+
+    [Inject]
+    public void Initialize()
+    {
+        _lifecycleService.Start();
     }
 }
