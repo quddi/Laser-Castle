@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: castle atlas
     originalName: 
-    pivot: {x: 0.5, y: -0.6}
+    pivot: {x: 0.5, y: -0.6530612}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -129,7 +129,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 256
-      height: 160
+      height: 147
     spriteID: b22d1689952405d40b957138217a3811
     spriteBone: []
     spriteOutline: []
@@ -154,7 +154,7 @@ ScriptedImporter:
         x: 0
         y: 96
         width: 256
-        height: 160
+        height: 147
       spriteId: b22d1689952405d40b957138217a3811
     linkedCells: []
     parentIndex: -1

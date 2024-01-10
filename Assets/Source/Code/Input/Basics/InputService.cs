@@ -37,14 +37,14 @@ namespace Code.Input
         {
             TargetPressedEvent?.Invoke(inputTarget);
             
-            Debug.Log("Pressed input target");
+            Debug.Log($"Pressed input target {inputTarget.Type}");
         }
 
         private void InputTargetUnpressedEvent(InputTarget inputTarget)
         {
             TargetUnpressedEvent?.Invoke(inputTarget);
             
-            Debug.Log("Unpressed input target");
+            Debug.Log($"Unpressed input target {inputTarget.Type}");
         }
     }
 }

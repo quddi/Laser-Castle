@@ -3,6 +3,7 @@
     public enum RaycastTargetType
     {
         None = 0,
-        Field = 1,
+        Blocking = 1,
+        Field = 2,
     }
 }
