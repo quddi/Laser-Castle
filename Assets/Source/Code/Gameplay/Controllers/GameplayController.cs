@@ -11,10 +11,13 @@ namespace Code.Gameplay
         
         private IInputService _inputService;
         private PlayerController _playerController;
+        private FingerCameraController _fingerCameraController;
 
         [Inject]
-        private void Construct(IInputService inputService, PlayerController playerController)
+        private void Construct(IInputService inputService, PlayerController playerController, 
+            FingerCameraController fingerCameraController)
         {
+            _fingerCameraController = fingerCameraController;
             _playerController = playerController;
             _inputService = inputService;
         }
@@ -25,6 +28,7 @@ namespace Code.Gameplay
                 return;
             
             _playerController.SetFocused(true);
+            _fingerCameraController.SetFollowFinger(true);
         }
 
         private void OnTargetUnpressedHandler(InputTarget inputTarget)
@@ -33,6 +37,7 @@ namespace Code.Gameplay
                 return;
             
             _playerController.SetFocused(false);
+            _fingerCameraController.SetFollowFinger(false);
         }
 
         private void OnEnable()
