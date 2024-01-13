@@ -36,15 +36,11 @@ namespace Code.Input
         private void InputTargetPressedEvent(InputTarget inputTarget)
         {
             TargetPressedEvent?.Invoke(inputTarget);
-            
-            Debug.Log($"Pressed input target {inputTarget.Type}");
         }
 
         private void InputTargetUnpressedEvent(InputTarget inputTarget)
         {
             TargetUnpressedEvent?.Invoke(inputTarget);
-            
-            Debug.Log($"Unpressed input target {inputTarget.Type}");
         }
     }
 }
