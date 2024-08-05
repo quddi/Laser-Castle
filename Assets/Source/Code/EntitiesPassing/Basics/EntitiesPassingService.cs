@@ -20,7 +20,7 @@ namespace Code.EntitiesPassing
 
         public object Get(string key)
         {
-            return _entities.GetValue(key);
+            return _entities.GetValueOrDefault(key);
         }
 
         public void Remove(string key)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Extensions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -28,22 +29,9 @@ namespace Code.Loading
         public string GameSceneName => _gameSceneName;
 
 #if UNITY_EDITOR
-        private static LoadingConfig _instance;
-
         public static IEnumerable GetScenesNames()
         {
-            if (_instance == null)
-            {
-                var assets = UnityEditor.AssetDatabase.FindAssets($"t:{nameof(LoadingConfig)}");
-
-                if (assets.Length > 0)
-                {
-                    _instance = assets.Select(UnityEditor.AssetDatabase.GUIDToAssetPath)
-                        .Select(UnityEditor.AssetDatabase.LoadAssetAtPath<LoadingConfig>).First();
-                }
-            }
-
-            return _instance.ScenesNames;
+            return ExtensionMethods.GetAllScriptableObjects<LoadingConfig>().First().ScenesNames;
         }
 #endif
     }
