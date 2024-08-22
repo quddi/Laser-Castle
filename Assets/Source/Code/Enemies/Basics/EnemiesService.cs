@@ -2,7 +2,7 @@
 using System.Linq;
 using Zenject;
 
-namespace Source.Enemies
+namespace Code.Enemies
 {
     public class EnemiesService : IEnemiesService
     {

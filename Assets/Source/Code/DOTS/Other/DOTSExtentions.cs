@@ -1,7 +1,7 @@
 ﻿using Unity.Collections;
 using Unity.Entities;
 
-namespace Source.DOTS
+namespace Code.DOTS
 {
     public static class DOTSExtentions
     {

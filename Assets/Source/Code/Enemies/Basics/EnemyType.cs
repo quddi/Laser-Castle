@@ -1,4 +1,4 @@
-﻿namespace Source.Enemies
+﻿namespace Code.Enemies
 {
     public enum EnemyType
     {

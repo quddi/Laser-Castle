@@ -1,7 +1,7 @@
 ﻿using Unity.Entities;
 using UnityEngine;
 
-namespace Source.DOTS
+namespace Code.DOTS
 {
     public partial class EnemiesSpawnSystem : SystemBase
     {
@@ -12,7 +12,7 @@ namespace Source.DOTS
 
         protected override void OnUpdate()
         {
-            if (!Input.GetKeyDown(KeyCode.Space))
+            if (!UnityEngine.Input.GetKeyDown(KeyCode.Space))
                 return;
             
             var configsComponent = SystemAPI.GetSingleton<EnemiesConfigsContainerComponent>();

@@ -1,7 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Source.Enemies
+namespace Code.Enemies
 {
     [CreateAssetMenu(menuName = "Configs/Enemies/Enemy Config", fileName = "Enemy config")]
     public class EnemyConfig : SerializedScriptableObject

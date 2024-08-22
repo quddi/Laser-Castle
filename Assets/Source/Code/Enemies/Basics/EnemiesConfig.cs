@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEditor;
 using UnityEngine;
 
-namespace Source.Enemies
+namespace Code.Enemies
 {
     [CreateAssetMenu(menuName = "Configs/Enemies/Enemies Config", fileName = "Enemies config")]
     public class EnemiesConfig : SerializedScriptableObject

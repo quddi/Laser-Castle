@@ -1,8 +1,9 @@
 ﻿using System;
+using Code.Other;
 
 namespace Code.EntitiesPassing
 {
-    public interface IEntitiesPassingService
+    public interface IEntitiesPassingService : IService
     {
         public event Action<string, object> OnEntitySetEvent;
         public event Action<string, object> OnEntityRemovedEvent;

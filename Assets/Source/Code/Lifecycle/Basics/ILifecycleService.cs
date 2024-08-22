@@ -1,9 +1,10 @@
 ﻿using System;
+using Code.Other;
 using Cysharp.Threading.Tasks;
 
 namespace Code.Lifecycle
 {
-    public interface ILifecycleService
+    public interface ILifecycleService : IService
     {
         public event Action GamePreparationEvent;
         

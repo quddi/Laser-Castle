@@ -1,6 +1,6 @@
 ﻿using Unity.Entities;
 
-namespace Source.DOTS
+namespace Code.DOTS
 {
     public struct EntityComponent : IComponentData
     {

@@ -1,8 +1,9 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Code.Other;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Loading
 {
-    public interface ILoadingService
+    public interface ILoadingService : IService
     {
         public UniTask<bool> TryLoad(string sceneName);
         

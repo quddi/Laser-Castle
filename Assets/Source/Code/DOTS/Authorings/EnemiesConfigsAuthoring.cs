@@ -1,9 +1,8 @@
-﻿using Code.Extensions;
-using Source.Enemies;
+﻿using Code.Enemies;
 using Unity.Entities;
 using UnityEngine;
 
-namespace Source.DOTS
+namespace Code.DOTS
 {
     public class EnemiesConfigsAuthoring : MonoBehaviour
     {
