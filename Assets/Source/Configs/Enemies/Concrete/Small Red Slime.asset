@@ -22,6 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   <Id>k__BackingField: 3
+  <MovementSpeed>k__BackingField: {x: 0, y: -1, z: 0}
   <Type>k__BackingField: 1
   <AnimatorOverrideController>k__BackingField: {fileID: 0}
   <Prefab>k__BackingField: {fileID: 235458862849615116, guid: d178fcf3eda4749418e70cd5691420db, type: 3}

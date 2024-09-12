@@ -8,10 +8,9 @@ namespace Code.DOTS
 {
     public partial class EnemiesSpawnSystem : SystemBase
     {
-
         protected override void OnCreate()
         {
-            RequireForUpdate<EnemiesConfigsContainerComponent>();
+            RequireForUpdate<EnemiesSpawnSystemSetup>();
         }
 
         protected override void OnUpdate()
@@ -19,8 +18,8 @@ namespace Code.DOTS
             if (!UnityEngine.Input.GetKeyDown(KeyCode.Space))
                 return;
 
-            var mainEntity = SystemAPI.GetSingletonEntity<EnemiesConfigsContainerComponent>();
-            var configsComponent = EntityManager.GetComponentData<EnemiesConfigsContainerComponent>(mainEntity);
+            var mainEntity = SystemAPI.GetSingletonEntity<EnemiesSpawnSystemSetup>();
+            var configsComponent = EntityManager.GetComponentData<EnemiesSpawnSystemSetup>(mainEntity);
             var buffer = EntityManager.GetBuffer<LinkedEntityGroup>(configsComponent.Value);
             var randomConfig = buffer.Random().Value;
             var entityComponent = EntityManager.GetComponentData<EntityComponent>(randomConfig);
@@ -28,6 +27,12 @@ namespace Code.DOTS
             var entity = EntityManager.Instantiate(entityComponent.Value);
             
             SetStartPosition(mainEntity, entity);
+
+            EntityManager.AddComponent<EnemyComponent>(entity);
+
+            var movementSpeed = EntityManager.GetComponentData<MovementSpeedComponent>(randomConfig);
+            
+            EntityManager.AddComponentData(entity, movementSpeed);
         }
 
         private void SetStartPosition(Entity mainEntity, Entity entity)
