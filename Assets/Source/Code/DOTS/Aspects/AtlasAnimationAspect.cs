@@ -20,7 +20,7 @@ namespace Code.DOTS
 
             var currentFrameIndex = AtlasAnimationState.ValueRO.CurrentFrameIndex;
             var framesCount = AtlasAnimation.ValueRO.FramesCount;
-            
+
             AtlasAnimationState.ValueRW.CurrentFrameIndex = (currentFrameIndex + 1) % framesCount;
             
             return true;

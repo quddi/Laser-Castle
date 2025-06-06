@@ -48,12 +48,17 @@ namespace Code.DOTS
                 {
                     var configEntity = CreateAdditionalEntity(TransformUsageFlags.None);
                     var prefabEntity = GetEntity(enemyConfig.Prefab, TransformUsageFlags.Dynamic);
-                    
+
                     AddComponent(configEntity, new IdComponent { Value = enemyConfig.Id });
                     AddComponent(configEntity, new EntityComponent { Value = prefabEntity });
                     AddComponent(configEntity, new MovementSpeedComponent { Vector = enemyConfig.MovementSpeed });
+                    AddComponent(configEntity, new AtlasAnimationComponent
+                    {
+                        FrameDuration = enemyConfig.AnimationFrameDuration,
+                        FramesCount = enemyConfig.AnimationFramesCount
+                    });
 
-                    someBuffer.Add(new LinkedEntityGroup {Value = configEntity });
+                someBuffer.Add(new LinkedEntityGroup {Value = configEntity });
                 }
             }
         }

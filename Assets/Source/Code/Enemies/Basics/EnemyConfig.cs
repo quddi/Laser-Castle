@@ -14,5 +14,9 @@ namespace Code.Enemies
         [field: SerializeField] public AnimatorOverrideController AnimatorOverrideController { get; private set; }
 
         [field: SerializeField] public GameObject Prefab { get; private set; }
+
+        [field: SerializeField] public float AnimationFrameDuration { get; private set; }
+
+        [field: SerializeField] public int AnimationFramesCount { get; private set; }
     }
 }

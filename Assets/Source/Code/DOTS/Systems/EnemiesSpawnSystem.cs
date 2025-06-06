@@ -45,15 +45,12 @@ namespace Code.DOTS
             EntityManager.AddComponent<EnemyComponent>(entity);
 
             var movementSpeed = EntityManager.GetComponentData<MovementSpeedComponent>(randomConfig);
-
+            var atlasAnimation = EntityManager.GetComponentData<AtlasAnimationComponent>(randomConfig);
+            
             EntityManager.AddComponentData(entity, movementSpeed);
             EntityManager.AddComponentData(entity, new AnimationTimeComponent());
             EntityManager.AddComponentData(entity, new AtlasAnimationStateComponent());
-            EntityManager.AddComponentData(entity, new AtlasAnimationComponent
-            {
-                FrameDuration = 0.45f,
-                FramesCount = 2
-            });
+            EntityManager.AddComponentData(entity, atlasAnimation);
         }
 
         private void SetStartPosition(Entity mainEntity, Entity entity)
