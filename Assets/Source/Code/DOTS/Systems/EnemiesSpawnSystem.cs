@@ -28,11 +28,7 @@ namespace Code.DOTS
 
             SetStartPosition(mainEntity, entity);
 
-            EntityManager.AddComponent<EnemyComponent>(entity);
-
-            var movementSpeed = EntityManager.GetComponentData<MovementSpeedComponent>(randomConfig);
-            
-            EntityManager.AddComponentData(entity, movementSpeed);
+            AddEntityComponentsDatas(entity, randomConfig);
         }
 
         private Entity CreateEnemy(Entity randomConfig)
@@ -42,6 +38,22 @@ namespace Code.DOTS
             var entity = EntityManager.Instantiate(entityComponent.Value);
             
             return entity;
+        }
+
+        private void AddEntityComponentsDatas(Entity entity, Entity randomConfig)
+        {
+            EntityManager.AddComponent<EnemyComponent>(entity);
+
+            var movementSpeed = EntityManager.GetComponentData<MovementSpeedComponent>(randomConfig);
+
+            EntityManager.AddComponentData(entity, movementSpeed);
+            EntityManager.AddComponentData(entity, new AnimationTimeComponent());
+            EntityManager.AddComponentData(entity, new AtlasAnimationStateComponent());
+            EntityManager.AddComponentData(entity, new AtlasAnimationComponent
+            {
+                FrameDuration = 0.45f,
+                FramesCount = 2
+            });
         }
 
         private void SetStartPosition(Entity mainEntity, Entity entity)
