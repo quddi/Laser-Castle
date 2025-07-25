@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Slime
+  m_Name: SmallSlime
   m_Shader: {fileID: 4800000, guid: c523911f1b5d30845a465697d2984407, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 64b19ebf7314a424b98251ccc49a4af7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7a6421a12a0d8d349a8e611dcb01dfe6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -48,14 +48,14 @@ Material:
     - _IndexY: 0
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _Height: 34
+    - _Height: 22
     - _IndexX: 0
     - _IndexY: 0
     - _PPU: 100
     - _PixelsPerUnit: 100
     - _TileX: 4
     - _TileY: 2
-    - _Width: 84
+    - _Width: 56
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}

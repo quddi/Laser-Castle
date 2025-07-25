@@ -20,6 +20,10 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 53bb79f4f90b97e489f6608a3d22b39a, type: 2}
     - {fileID: 11400000, guid: c7f1d3bc07a1dc24081448f1cc6531a9, type: 2}
     - {fileID: 11400000, guid: e8ebb69bb5d74e042a4e95615871c905, type: 2}
+    - {fileID: 11400000, guid: 673449e9f6d0df04aae2cfac688a691b, type: 2}
+    - {fileID: 11400000, guid: f3ddc96107f27c647b01f516af64bc11, type: 2}
+    - {fileID: 11400000, guid: d10e5009d397251438f79a0ba5cb4767, type: 2}
+    - {fileID: 11400000, guid: 57d20bd5ccc6b274685721be2429c23b, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -31,7 +35,7 @@ MonoBehaviour:
         System.Core
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 8
     - Name: 
       Entry: 10
       Data: 0
@@ -44,6 +48,18 @@ MonoBehaviour:
     - Name: 
       Entry: 10
       Data: 3
+    - Name: 
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 10
+      Data: 7
     - Name: 
       Entry: 13
       Data: 

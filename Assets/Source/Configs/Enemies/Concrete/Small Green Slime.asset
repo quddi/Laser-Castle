@@ -21,10 +21,11 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  <Id>k__BackingField: 2
+  <Id>k__BackingField: 5
+  <TileIndexX>k__BackingField: 1
   <MovementSpeed>k__BackingField: {x: 0, y: -1, z: 0}
   <Type>k__BackingField: 1
   <AnimatorOverrideController>k__BackingField: {fileID: 0}
-  <Prefab>k__BackingField: {fileID: 235458862849615116, guid: d178fcf3eda4749418e70cd5691420db, type: 3}
+  <Prefab>k__BackingField: {fileID: 235458862849615116, guid: f97ac6c390abdeb4bb0245ccb70612d9, type: 3}
   <AnimationFrameDuration>k__BackingField: 0.4
   <AnimationFramesCount>k__BackingField: 2

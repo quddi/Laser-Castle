@@ -14,7 +14,7 @@ namespace Code.DOTS
         {
             var entityCommandBuffer = new EntityCommandBuffer(Allocator.Temp);
             
-            foreach (var (idComponent, entity) in SystemAPI.Query<IdComponent>()
+            foreach (var (tileIndexXComponent, entity) in SystemAPI.Query<TileIndexXComponent>()
                          .WithAll<SpawnedTag>()
                          .WithEntityAccess())
             {
@@ -23,9 +23,8 @@ namespace Code.DOTS
 
                 var renderer = entity.GetEnemySpriteRenderer(EntityManager);
                 
-                renderer.material.SetFloat(IndexX, idComponent.Value * 1f);
+                renderer.material.SetFloat(IndexX, tileIndexXComponent.Value * 1f);
 
-                //entityCommandBuffer.RemoveComponent<SpawnedTag>(entity);   
                 entityCommandBuffer.AddComponent<InitializedTag>(entity);
             }
             

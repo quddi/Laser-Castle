@@ -32,12 +32,6 @@ namespace Code.DOTS
             SetStartPosition(mainEntity, entity);
 
             AddEntityComponentsDatas(entity, randomConfig);
-            
-            EntityManager.AddComponent<SpawnedTag>(entity);
-            
-            var idComponent = EntityManager.GetComponentData<IdComponent>(randomConfig);
-
-            EntityManager.AddComponentData(entity, idComponent);
         }
 
         private Entity CreateEnemy(Entity randomConfig)
@@ -69,6 +63,11 @@ namespace Code.DOTS
             EntityManager.AddComponentData(entity, new AnimationTimeComponent());
             EntityManager.AddComponentData(entity, new AtlasAnimationStateComponent());
             EntityManager.AddComponentData(entity, atlasAnimation);
+            
+            EntityManager.AddComponent<SpawnedTag>(entity);
+
+            EntityManager.AddComponentData(entity, EntityManager.GetComponentData<IdComponent>(randomConfig));
+            EntityManager.AddComponentData(entity, EntityManager.GetComponentData<TileIndexXComponent>(randomConfig));
         }
     }
 }

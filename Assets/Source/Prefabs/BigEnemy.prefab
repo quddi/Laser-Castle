@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6896802496865644932}
   m_Layer: 0
-  m_Name: SmallEnemy
+  m_Name: BigEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e522db169c848d5448fd053167482152, type: 2}
+  - {fileID: 2100000, guid: b54de5a1ffab093489b9f07bf457b944, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,12 +105,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7a6421a12a0d8d349a8e611dcb01dfe6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64b19ebf7314a424b98251ccc49a4af7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.67, y: 0.24}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -7,6 +7,7 @@ namespace Code.Enemies
     public class EnemyConfig : SerializedScriptableObject
     {
         [field: SerializeField] public int Id { get; private set; }
+        [field: SerializeField] public int TileIndexX { get; private set; }
         [field: SerializeField] public Vector3 MovementSpeed { get; private set; }
 
         [field: SerializeField] public EnemyType Type { get; private set; }

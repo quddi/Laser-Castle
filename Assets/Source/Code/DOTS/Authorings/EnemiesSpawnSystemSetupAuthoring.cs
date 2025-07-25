@@ -50,6 +50,7 @@ namespace Code.DOTS
                     var prefabEntity = GetEntity(enemyConfig.Prefab, TransformUsageFlags.Dynamic);
 
                     AddComponent(configEntity, new IdComponent { Value = enemyConfig.Id });
+                    AddComponent(configEntity, new TileIndexXComponent {Value = enemyConfig.TileIndexX });
                     AddComponent(configEntity, new EntityComponent { Value = prefabEntity });
                     AddComponent(configEntity, new MovementSpeedComponent { Vector = enemyConfig.MovementSpeed });
                     AddComponent(configEntity, new AtlasAnimationComponent
