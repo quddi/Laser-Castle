@@ -7,7 +7,7 @@ namespace Code.DOTS
 {
     public partial class ServicesSystem : SystemBase
     {
-        private Dictionary<Type, IService> _services = new();
+        private readonly Dictionary<Type, IService> _services = new();
         
         protected override void OnUpdate() { }
 

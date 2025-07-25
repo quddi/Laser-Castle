@@ -1,4 +1,5 @@
-﻿using Code.Extensions;
+﻿using Code.DOTS.Tags;
+using Code.Extensions;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -9,6 +10,8 @@ namespace Code.DOTS
 {
     public partial class EnemiesSpawnSystem : SystemBase
     {
+        private static readonly int IndexX = Shader.PropertyToID("_IndexX");
+
         protected override void OnCreate()
         {
             RequireForUpdate<EnemiesSpawnSystemSetup>();
@@ -29,6 +32,12 @@ namespace Code.DOTS
             SetStartPosition(mainEntity, entity);
 
             AddEntityComponentsDatas(entity, randomConfig);
+            
+            EntityManager.AddComponent<SpawnedTag>(entity);
+            
+            var idComponent = EntityManager.GetComponentData<IdComponent>(randomConfig);
+
+            EntityManager.AddComponentData(entity, idComponent);
         }
 
         private Entity CreateEnemy(Entity randomConfig)
@@ -38,6 +47,15 @@ namespace Code.DOTS
             var entity = EntityManager.Instantiate(entityComponent.Value);
             
             return entity;
+        }
+
+        private void SetStartPosition(Entity mainEntity, Entity entity)
+        {
+            var spawnPositionBoundsComponent = EntityManager.GetComponentData<SpawnPositionBoundsComponent>(mainEntity);
+            var x = Random.Range(spawnPositionBoundsComponent.MinX, spawnPositionBoundsComponent.MaxX);
+            var y = Random.Range(spawnPositionBoundsComponent.MinY, spawnPositionBoundsComponent.MaxY);
+            
+            SystemAPI.SetComponent(entity, LocalTransform.FromPosition(new float3(x, y,0)));
         }
 
         private void AddEntityComponentsDatas(Entity entity, Entity randomConfig)
@@ -51,15 +69,6 @@ namespace Code.DOTS
             EntityManager.AddComponentData(entity, new AnimationTimeComponent());
             EntityManager.AddComponentData(entity, new AtlasAnimationStateComponent());
             EntityManager.AddComponentData(entity, atlasAnimation);
-        }
-
-        private void SetStartPosition(Entity mainEntity, Entity entity)
-        {
-            var spawnPositionBoundsComponent = EntityManager.GetComponentData<SpawnPositionBoundsComponent>(mainEntity);
-            var x = Random.Range(spawnPositionBoundsComponent.MinX, spawnPositionBoundsComponent.MaxX);
-            var y = Random.Range(spawnPositionBoundsComponent.MinY, spawnPositionBoundsComponent.MaxY);
-            
-            SystemAPI.SetComponent(entity, LocalTransform.FromPosition(new float3(x, y,0)));
         }
     }
 }

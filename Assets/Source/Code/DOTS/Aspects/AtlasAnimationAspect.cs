@@ -1,4 +1,5 @@
-﻿using Unity.Entities;
+﻿using Code.DOTS.Tags;
+using Unity.Entities;
 using UnityEngine;
 
 namespace Code.DOTS
@@ -8,6 +9,7 @@ namespace Code.DOTS
         public readonly RefRW<AnimationTimeComponent> AnimationTime;
         public readonly RefRW<AtlasAnimationStateComponent> AtlasAnimationState;
         public readonly RefRO<AtlasAnimationComponent> AtlasAnimation;
+        public readonly RefRO<InitializedTag> InitializedTag;
 
         public bool AddTime(float deltaTime)
         {

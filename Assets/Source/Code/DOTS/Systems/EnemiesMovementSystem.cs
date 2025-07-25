@@ -1,4 +1,5 @@
-﻿using Unity.Collections;
+﻿using Code.DOTS.Tags;
+using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ namespace Code.DOTS
             var entitiesToRemove = new NativeList<Entity>(Allocator.Temp);
             
             foreach (var (aspect, entity) in SystemAPI.Query<MovementAspect>()
-                         .WithAll<EnemyComponent>()
+                         .WithAll<EnemyComponent, InitializedTag>()
                          .WithEntityAccess())
             {
                 aspect.Move(SystemAPI.Time.DeltaTime);

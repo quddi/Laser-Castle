@@ -19,10 +19,7 @@ namespace Code.DOTS
 
                 var currentFrameIndex = aspect.AtlasAnimationState.ValueRO.CurrentFrameIndex;
                 
-                var children = EntityManager.GetBuffer<Child>(entity);
-                
-                EntityManager.GetComponentObject<SpriteRenderer>(children[0].Value)
-                    .material.SetFloat(IndexY, currentFrameIndex);
+                entity.GetEnemySpriteRenderer(EntityManager).material.SetFloat(IndexY, currentFrameIndex);
             }
         }
     }
