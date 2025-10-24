@@ -1,0 +1,18 @@
+{
+    "name": "LaserSystem2DEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:266366e23967fef4c918567c62d0e272"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
